@@ -1,0 +1,19 @@
+{
+  "facebook": {
+    "use": false,
+    "clientID": "",
+    "clientSecret": ""
+  },
+ 
+  "twitter": {
+    "use": false,
+    "consumerKey": "",
+    "consumerSecret": ""
+  },
+
+  "github": {
+    "use": false,
+    "clientID": "",
+    "clientSecret": ""
+  }
+}
