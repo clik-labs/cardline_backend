@@ -1,33 +1,26 @@
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://localhost/radionoise');
+var db = mongoose.connect('mongodb://localhost/cardline');
 mongoose.Promise = global.Promise;
 
+var CardSchema = mongoose.Schema({
+  title: String,
+  subtitle: String,
+  summary: String,
+  time: String,
+  token: String,
+  sync: Boolean
+});
+
 var UsersSchema = mongoose.Schema({
-  id: {type: String},
-  passwd: {type: String},
-  name: {type: String},
-  token: {type: String},
-  setting: {type: String},
-  profile: {type: String},
-  profile_img: {type: String},
-  facebook_id: {type: String},
-  github_id: {type: String},
-  twitter_id: {type: String},
-  google_id: {type: String},
-  chats:[String]
+  id: String,
+  passwd: String,
+  name: String,
+  sync: CardSchema,
+  liked_card: [String],
 });
-
-var ChatsSchema = mongoose.Schema({
-   chat_peoples: [String], 
-   room_token: {type: String},
-   chats:[{
-     talker: {type: String},
-     talk: {type: String}
-   }]
-});
-
 
 Users = mongoose.model("users", UsersSchema);
-chats = mongoose.model("chats", ChatsSchema);
+Cards = mongooose.model("cards", CardSchema);
+
 exports.Users = Users;
 exports.db = db;
