@@ -4,21 +4,21 @@ mongoose.Promise = global.Promise;
 
 var commnet = mongoose.Schema({
 	card_token: String,
-  	writer_profile: String,
-  	writer: String,
-  	date: String,
-  	summary: String
-})
+  writer_profile: String,
+  writer: String,
+  date: String,
+  summary: String
+});
 
 var CardSchema = mongoose.Schema({
-  card_token: Stringm
+  card_token: String,
   title: String,
   writer: String,
   subtitle: String,
   token: String,
   like: Number,
   date: String,
-  token: String
+  token: String,
 });
 
 var sync_CardSchema = mongoose.Schema({
@@ -41,7 +41,7 @@ var UsersSchema = mongoose.Schema({
   facebook_id: {type: String},
   interest: {type: String},
   sync: sync_CardSchema,
-  enable_sync: {type: Boolean}
+  enable_sync: {type: Boolean},
   liked_card: [String],
   liked_editor: [String],
   like: {type: Number},
