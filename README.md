@@ -12,11 +12,11 @@ ang readme
   HTTP 401: Bad Request
 
   HTTP 404: not found
-  
+
   HTTP 409: conflict
 
   HTTP 500: DB error
-  
+
 * POST /auth/signup : User signup
 
 > Params
@@ -24,7 +24,7 @@ ang readme
     email : User's ID [String]
 
     passwd : User's   Password [String]
-    
+
     name : User name
 
 > Response
@@ -32,7 +32,7 @@ ang readme
     HTTP 200 : send User
 
     HTTP 401 : ID / Password Incorrect
-    
+
     HTTP 500 : DB ERR
 
 * POST /auth/signin : User Login
@@ -48,9 +48,9 @@ ang readme
     HTTP 200 : send User
 
     HTTP 401 : ID / Password Incorrect
-    
+
     HTTP 500 : DB ERR
-    
+
 * POST /auth/auto : auto login
 
 > Params
@@ -62,32 +62,32 @@ ang readme
     HTTP 200 : send User
 
     HTTP 404 : user not found
-    
+
     HTTP 500 : DB ERR
-    
-* GET /cards : all card list 
+
+* GET /cards : all card list
 
 > Response
 
     HTTP 200 : send card
-    
+
     HTTP 500 : DB ERR
-    
-    
+
+
 * POST /cards : add new card
 
 > Params
 
   title : card title
-  
+
   cate : card title
 
 > Response
 
     HTTP 200 : send card
-    
+
     HTTP 500 : DB ERR
- 
+
 * GET /cards/{card_token}: card
 
 > Params
@@ -99,10 +99,10 @@ ang readme
     HTTP 200 : send Card
 
     HTTP 404 : not found
-    
+
     HTTP 500 : DB ERR
-    
-    
+
+
 * GET /cards/likes/{token}: user card like
 
 > Params
@@ -114,9 +114,9 @@ ang readme
     HTTP 200 : user liked cards
 
     HTTP 404 : not found
-    
+
     HTTP 500 : DB ERR
-    
+
 * POST /cards/like: card like
 
 > Params
@@ -129,9 +129,9 @@ ang readme
     HTTP 200 : success
 
     HTTP 404 : not found
-    
+
     HTTP 500 : DB ERR
-    
+
 * DELETE /cards/like: card dislike
 
 > Params
@@ -144,9 +144,9 @@ ang readme
     HTTP 200 : success
 
     HTTP 404 : not found
-    
+
     HTTP 500 : DB ERR
-  
+
 * GET /cards/search/{search} : card search
 
 > Params
@@ -158,28 +158,28 @@ ang readme
     HTTP 200 : user liked cards
 
     HTTP 404 : not found
-    
+
     HTTP 500 : DB ERR
-    
-    
-* GET /feed/{token} : 
+
+
+* GET /feed/{token} :
 
 > Params
 
   token: user_token
-  
+
 
 > Response
 
     HTTP 200 : news feed
 
     HTTP 404 : user not found
-    
+
     HTTP 500 : DB ERR
-    
-    
-* GET /users/{token} : 
-  
+
+
+* GET /users/{token} :
+
  > Params
 
   token: user_token (this is editor's user token) [String]
@@ -189,12 +189,12 @@ ang readme
     HTTP 200 : editor porfile
 
     HTTP 404 : user not found
-    
+
     HTTP 500 : DB ERR
 
 
 * GET /my/{token} : check my profile
-  
+
  > Params
 
     token: user_token [String]
@@ -204,16 +204,16 @@ ang readme
     HTTP 200 : return my page
 
     HTTP 404 : user not found
-    
+
     HTTP 500 : DB ERR
 
-       
+
 * GET /my/{token}/auth/fb?access_token={access_token} : sync facebook
 
  > Params
 
     token: user_token [String]
-    
+
     access_token : facebook access token [String]
 
 > Response
@@ -221,12 +221,12 @@ ang readme
     HTTP 200 : return my page
 
     HTTP 404 : user not found
-    
+
     HTTP 500 : DB ERR
- 
-  
-       
-       
+
+
+
+
 ## Database Schema
 
 ### User
@@ -250,7 +250,7 @@ ang readme
   date: String,
   token: String,
   sync: Boolean
-  
+
 ### card
   title: String,
   writer: String,

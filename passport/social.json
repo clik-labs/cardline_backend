@@ -1,8 +1,8 @@
 {
   "facebook": {
-    "use": false,
-    "clientID": "",
-    "clientSecret": ""
+    "use": true,
+    "clientID": "297373627354478",
+    "clientSecret": "8f1f3dedacf79890c7612fdc533d76a0"
   },
  
   "twitter": {
