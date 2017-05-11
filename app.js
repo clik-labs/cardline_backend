@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 require('./mongo');
+require('./func');
 var passport = require('./passport');
 
 var index = require('./routes/index');
