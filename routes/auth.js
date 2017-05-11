@@ -44,4 +44,15 @@ router
    }
  })
 
+ .post('/auto', (req, res)=>{
+   var params = ["token"];
+   if(!check_params(req.body, params)){
+     Users.findOne(req.body, {_id: 0, email: 1, name: 1, token: 1}, (err, users)=>{
+       if(err) return res.status(500).send("DB ERR");
+       if(users) return res.status(200).send(users);
+       else return res.status(404).send("not found");
+     })
+   }
+ })
+
 module.exports = router;
