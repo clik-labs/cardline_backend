@@ -51,6 +51,21 @@ ang readme
 
     HTTP 500 : DB ERR
 
+* GET /auth/fb/token : facebook Login
+
+  > Params
+
+      access_token : facebook
+
+ > Response
+
+    HTTP 200 : send User
+
+    HTTP 401 : ID / Password Incorrect
+
+    HTTP 500 : DB ERR
+
+
 * POST /auth/auto : auto login
 
 > Params
@@ -208,7 +223,7 @@ ang readme
     HTTP 500 : DB ERR
 
 
-* GET /my/{token}/auth/fb?access_token={access_token} : sync facebook
+* GET /my/{token}/auth/fb/token?access_token={access_token} : sync facebook
 
  > Params
 
@@ -230,37 +245,36 @@ ang readme
 ## Database Schema
 
 ### User
-  id: {type: String},
-  passwd: {type: String},
-  name: {type: String},
-  token: {type: String},
-  setting: {type: String},
-  profile: {type: String},
-  profile_img: {type: String},
-  facebook_id: {type: String},
-  interest: {type: String},
-  sync: sync_CardSchema,
-  liked_card: [String],
-  liked_editor: [String]
+  > id: {type: String},
+  > passwd: {type: String},
+  > name: {type: String},
+  > token: {type: String},
+  > setting: {type: String},
+  > profile: {type: String},
+  > profile_img: {type: String},
+  > facebook_id: {type: String},
+  > interest: {type: String},
+  > sync: sync_CardSchema,
+  > liked_card: [String],
+  > liked_editor: [String]
 
 ### sync_Card
-  title: String,
-  subtitle: String,
-  summary: String,
-  date: String,
-  token: String,
-  sync: Boolean
+  > title: String,
+  > subtitle: String,
+  > summary: String,
+  > date: String,
+  > token: String,
+  > sync: Boolean
 
 ### card
-  title: String,
-  writer: String,
-  subtitle: String,
-  like: Number,
-  comment:[{
-  	writer_profile: String,
-  	writer: String,
-  	date: String,
-  	summary: String
-  }]
-  date: String,
-  token: String
+  > title: String,
+  > writer: String,
+  > subtitle: String,
+  > like: Number,
+  > comment:
+  	>> writer_profile: String,
+  	>> writer: String,
+  	>> date: String,
+  	>> summary: String
+  > date: String,
+  > token: String

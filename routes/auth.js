@@ -42,4 +42,13 @@ router
    }
  })
 
+ .get('/fb/token', passport.authenticate('facebook-token'), function(req, res) {
+   Users.findOne({facebook_id: req.user._json.id}, ['token', 'name'],function(err, users) {
+       if(err) err;
+       if(users) res.status(200).json(users);
+       else res.status(404).send("unsynced");
+     });
+   } else  res.status(401).send("unauthed");
+ });
+
 module.exports = router;

@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 require('./mongo');
 require('./func');
-var passport = require('./passport');
+passport = require('./passport');
 
 var index = require('./routes/index');
 var users = require('./routes/users');

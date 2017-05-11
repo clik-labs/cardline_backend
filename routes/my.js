@@ -20,4 +20,14 @@ router.get('/:token', function(req, res, next) {
   }
 });
 
+.get('/:token/fb/token', passport.authenticate('facebook-token'), function(req, res) {
+   if (req.user) {
+     Users.update({token: req.params.token}, {facebook_id: req.user._json.id}, {_id: 0}, function(err, result) {
+       if(err) return res.status(500).send("DB err");
+       if(result) return res.status(200).send("success");
+     });
+
+   } else  res.status(401).send("unauthed");
+ })
+
 module.exports = router;
